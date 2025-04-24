@@ -6,23 +6,25 @@
   <style>
     body {
       background-color: #ccffff;
-      text-align: center;
       font-family: "MS Pゴシック", sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
     }
 
     .rainbow-welcome {
-      display: inline-block;
       font-size: 60px;
       font-weight: bold;
-      animation: swing 2s infinite ease-in-out;
-      position: relative;
-      margin-top: 50px;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      animation: bounceHorizontally 5s ease-in-out infinite alternate;
+      white-space: nowrap;
     }
 
-    @keyframes swing {
-      0%   { transform: translateX(-15px) rotate(-2deg); }
-      50%  { transform: translateX(15px) rotate(2deg); }
-      100% { transform: translateX(-15px) rotate(-2deg); }
+    @keyframes bounceHorizontally {
+      0%   { left: 0; }
+      100% { left: calc(100vw - 400px); }
     }
 
     .rainbow-welcome span {
@@ -36,19 +38,22 @@
     .c6 { color: purple; }
 
     .entrance-image {
-      margin-top: 30px;
+      margin-top: 150px;
+      text-align: center;
     }
     .entrance-link {
       font-size: 24px;
-      display: inline-block;
+      display: block;
       margin-top: 20px;
       color: blue;
+      text-align: center;
       text-decoration: underline;
       cursor: pointer;
     }
     .counter {
       margin-top: 20px;
       font-size: 20px;
+      text-align: center;
     }
   </style>
 </head>
