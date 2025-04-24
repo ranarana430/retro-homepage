@@ -9,13 +9,32 @@
       text-align: center;
       font-family: "MS Pゴシック", sans-serif;
     }
-    h1 {
+
+    .rainbow-welcome {
+      display: inline-block;
       font-size: 60px;
-      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      animation: swing 2s infinite ease-in-out;
+      position: relative;
       margin-top: 50px;
     }
+
+    @keyframes swing {
+      0%   { transform: translateX(-15px) rotate(-2deg); }
+      50%  { transform: translateX(15px) rotate(2deg); }
+      100% { transform: translateX(-15px) rotate(-2deg); }
+    }
+
+    .rainbow-welcome span {
+      display: inline-block;
+    }
+    .c1 { color: red; }
+    .c2 { color: orange; }
+    .c3 { color: gold; }
+    .c4 { color: limegreen; }
+    .c5 { color: blue; }
+    .c6 { color: purple; }
+
     .entrance-image {
       margin-top: 30px;
     }
@@ -34,10 +53,18 @@
   </style>
 </head>
 <body>
-  <h1>ようこそ！</h1>
+  <h1 class="rainbow-welcome">
+    <span class="c1">よ</span>
+    <span class="c2">う</span>
+    <span class="c3">こ</span>
+    <span class="c4">そ</span>
+    <span class="c5">！</span>
+  </h1>
+
   <div class="entrance-image">
     <img src="https://via.placeholder.com/400x200" alt="ホームページの入口画像">
   </div>
+
   <div class="counter">
     <script>
       let count = localStorage.getItem("visitCount") || 1;
@@ -45,6 +72,7 @@
       localStorage.setItem("visitCount", ++count);
     </script>
   </div>
+
   <div class="entrance-link" onclick="location.href='menu.html'">
     入り口はコチラ
   </div>
