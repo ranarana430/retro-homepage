@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ようこそ！</title>
+  <style>
+    body {
+      background-color: #ccffff;
+      text-align: center;
+      font-family: "MS Pゴシック", sans-serif;
+    }
+    h1 {
+      font-size: 60px;
+      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-top: 50px;
+    }
+    .entrance-image {
+      margin-top: 30px;
+    }
+    .entrance-link {
+      font-size: 24px;
+      display: inline-block;
+      margin-top: 20px;
+      color: blue;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .counter {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>ようこそ！</h1>
+  <div class="entrance-image">
+    <img src="https://via.placeholder.com/400x200" alt="ホームページの入口画像">
+  </div>
+  <div class="counter">
+    <script>
+      let count = localStorage.getItem("visitCount") || 1;
+      document.write("あなたは" + count + "番目のお客様です！");
+      localStorage.setItem("visitCount", ++count);
+    </script>
+  </div>
+  <div class="entrance-link" onclick="location.href='menu.html'">
+    入り口はコチラ
+  </div>
+
+  <!-- ここまで見てるの（゜Д゜）!! -->
+</body>
+</html>
